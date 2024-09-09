@@ -17,7 +17,7 @@ class FactorialTest {
 		assertEquals(2, unit.factorial1(2));
 		assertEquals(6, unit.factorial1(3));
 		assertEquals(24, unit.factorial1(4));
-		assertEquals(2432902008176640000L, unit.factorial3(20));
+		assertEquals(2432902008176640000L, unit.factorial1(20));
 	}
 
 	@Test
@@ -27,7 +27,7 @@ class FactorialTest {
 		assertEquals(2, unit.factorial2(2));
 		assertEquals(6, unit.factorial2(3));
 		assertEquals(24, unit.factorial2(4));
-		assertEquals(2432902008176640000L, unit.factorial3(20));
+		assertEquals(2432902008176640000L, unit.factorial1(20));
 	}
 	
 	@Test

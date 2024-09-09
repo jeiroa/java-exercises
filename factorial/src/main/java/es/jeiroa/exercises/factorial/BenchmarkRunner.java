@@ -20,6 +20,8 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 /**
+ * > java -jar factorial/target/benchmarks.jar
+ *
  * Benchmark                   Mode  Cnt    Score   Error  Units
  * BenchmarkRunner.factorial1  avgt   25    7,041 ± 0,047  ns/op
  * BenchmarkRunner.factorial2  avgt   25   11,109 ± 0,271  ns/op
