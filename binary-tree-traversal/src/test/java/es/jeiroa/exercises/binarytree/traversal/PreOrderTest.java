@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PreOrderTest {
-    private PreOrder unit = new PreOrder();
+    private final PreOrder unit = new PreOrder();
 
     @Test
     void preorderTraversal1() {

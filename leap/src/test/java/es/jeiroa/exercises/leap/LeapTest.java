@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class LeapTest {
 
-	private Leap unit = new Leap();
+	private final Leap unit = new Leap();
 
 	@Test
 	void testIsLeap1() {

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class RaindropsTest {
 
-	private Raindrops unit = new Raindrops();
+	private final Raindrops unit = new Raindrops();
 
 	@Test
 	void testRaindrops1() {

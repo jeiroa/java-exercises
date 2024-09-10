@@ -1,21 +1,11 @@
 package es.jeiroa.exercises.binarysearch;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinarySearchTest {
-    private BinarySearch unit = new BinarySearch();
-
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
+    private final BinarySearch unit = new BinarySearch();
 
     @Test
     void searchTargetExistsEven() {

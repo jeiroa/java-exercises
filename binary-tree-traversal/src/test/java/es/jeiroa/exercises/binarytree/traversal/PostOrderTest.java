@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PostOrderTest {
-    private PostOrder unit = new PostOrder();
+    private final PostOrder unit = new PostOrder();
 
     @Test
     void postOrderTraversal1() {

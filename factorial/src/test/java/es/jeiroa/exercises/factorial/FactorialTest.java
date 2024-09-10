@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 class FactorialTest {
 
-	private Factorial unit = new Factorial();
+	private final Factorial unit = new Factorial();
 
 	@Test
 	void testFactorial1() {

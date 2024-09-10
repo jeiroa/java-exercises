@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class PalindromeTest {
 
-	private Palindrome unit = new Palindrome();
+	private final Palindrome unit = new Palindrome();
 
 	@Test
 	void testPalindrome1() {

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class FibonacciTest {
 
-	private Fibonacci unit = new Fibonacci();
+	private final Fibonacci unit = new Fibonacci();
 
 	@Test
 	void testFibonacci1() {

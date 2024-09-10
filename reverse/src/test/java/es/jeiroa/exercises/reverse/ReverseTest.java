@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class ReverseTest {
 
-	private Reverse unit = new Reverse();
+	private final Reverse unit = new Reverse();
 
 	@Test
 	void testReverse1() {
