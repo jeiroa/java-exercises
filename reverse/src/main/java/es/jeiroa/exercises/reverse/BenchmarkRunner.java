@@ -1,6 +1,5 @@
 package es.jeiroa.exercises.reverse;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -30,6 +29,8 @@ public class BenchmarkRunner {
 
 	private Reverse unit = null;
 
+	private String word = "stressed";
+
 	@Setup
 	public void prepare() {
 		unit = new Reverse();
@@ -37,25 +38,25 @@ public class BenchmarkRunner {
 
 	@Benchmark
 	public void reverse1(Blackhole bh) {
-		bh.consume(unit.reverse1("stressed"));
+		bh.consume(unit.reverse1(word));
 	}
 
 	@Benchmark
 	public void reverse2(Blackhole bh) {
-		bh.consume(unit.reverse2("stressed"));
+		bh.consume(unit.reverse2(word));
 	}
 
 	@Benchmark
 	public void reverse3(Blackhole bh) {
-		bh.consume(unit.reverse3("stressed"));
+		bh.consume(unit.reverse3(word));
 	}
 
 	@Benchmark
 	public void reverse4(Blackhole bh) {
-		bh.consume(unit.reverse4("stressed"));
+		bh.consume(unit.reverse4(word));
 	}
 
-	public static void main(String[] args) throws RunnerException, IOException {
+	public static void main(String[] args) throws RunnerException {
 		Options opt = new OptionsBuilder()
 				.include(BenchmarkRunner.class.getSimpleName())
 				.forks(1)

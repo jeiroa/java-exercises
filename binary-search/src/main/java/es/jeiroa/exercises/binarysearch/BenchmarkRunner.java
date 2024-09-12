@@ -21,7 +21,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 /**
  * > mvn clean package
- * > java -jar factorial/target/benchmarks.jar
+ * > java -jar target/benchmarks.jar
  *
  * Benchmark               Mode  Cnt  Score   Error  Units
  * BenchmarkRunner.search  avgt   25  7,483 ± 0,524  ns/op
@@ -30,14 +30,18 @@ public class BenchmarkRunner {
 
 	private BinarySearch unit = null;
 
+	private int[] nums;
+
 	@Setup
 	public void prepare() {
 		unit = new BinarySearch();
+
+		nums = new int[] { -1, 0, 3, 5, 9, 12 };
 	}
 
 	@Benchmark
 	public void search(Blackhole bh) {
-		bh.consume(unit.search(new int[] { -1, 0, 3, 5, 9, 12 }, 9));
+		bh.consume(unit.search(nums, 9));
 	}
 
 	public static void main(String[] args) throws RunnerException, IOException {

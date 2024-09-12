@@ -1,6 +1,5 @@
 package es.jeiroa.exercises.factorial;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -32,6 +31,8 @@ public class BenchmarkRunner {
 
 	private Factorial unit = null;
 
+	private int number = 8;
+
 	@Setup
 	public void prepare() {
 		unit = new Factorial();
@@ -39,25 +40,25 @@ public class BenchmarkRunner {
 
 	@Benchmark
 	public void factorial1(Blackhole bh) {
-		bh.consume(unit.factorial1(8));
+		bh.consume(unit.factorial1(number));
 	}
 
 	@Benchmark
 	public void factorial2(Blackhole bh) {
-		bh.consume(unit.factorial2(8));
+		bh.consume(unit.factorial2(number));
 	}
 
 	@Benchmark
 	public void factorial3(Blackhole bh) {
-		bh.consume(unit.factorial3(8));
+		bh.consume(unit.factorial3(number));
 	}
 
 	@Benchmark
 	public void factorial4(Blackhole bh) {
-		bh.consume(unit.factorial4(8));
+		bh.consume(unit.factorial4(number));
 	}
 
-	public static void main(String[] args) throws RunnerException, IOException {
+	public static void main(String[] args) throws RunnerException {
 		Options opt = new OptionsBuilder()
 				.include(BenchmarkRunner.class.getSimpleName())
 				.forks(1)

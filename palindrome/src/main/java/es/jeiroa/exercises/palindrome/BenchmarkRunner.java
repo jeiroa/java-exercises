@@ -1,6 +1,5 @@
 package es.jeiroa.exercises.palindrome;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -28,6 +27,8 @@ public class BenchmarkRunner {
 
 	private Palindrome unit =  null;
 
+	private String word = "racecar";
+
 	@Setup
 	public void prepare() {
 		unit = new Palindrome();
@@ -35,15 +36,15 @@ public class BenchmarkRunner {
 	
 	@Benchmark
 	public void isPalindrome1(Blackhole bh) {
-		bh.consume(unit.isPalindrome1("racecar"));
+		bh.consume(unit.isPalindrome1(word));
 	}
 	
 	@Benchmark
 	public void isPalindrome2(Blackhole bh) {
-		bh.consume(unit.isPalindrome2("racecar"));
+		bh.consume(unit.isPalindrome2(word));
 	}
 	
-	public static void main(String[] args) throws RunnerException, IOException {
+	public static void main(String[] args) throws RunnerException {
 		Options opt = new OptionsBuilder()
 				.include(BenchmarkRunner.class.getSimpleName())
 				.forks(1)

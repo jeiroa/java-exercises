@@ -1,6 +1,5 @@
 package es.jeiroa.exercises.fibonacci;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -28,6 +27,8 @@ public class BenchmarkRunner {
 
 	private Fibonacci unit = null;
 
+	private int number = 6;
+
 	@Setup
 	public void prepare() {
 		unit = new Fibonacci();
@@ -35,15 +36,15 @@ public class BenchmarkRunner {
 
 	@Benchmark
 	public void fibonacci1(Blackhole bh) {
-		bh.consume(unit.fibonacci1(6));
+		bh.consume(unit.fibonacci1(number));
 	}
 
 	@Benchmark
 	public void fibonacci2(Blackhole bh) {
-		bh.consume(unit.fibonacci2(6));
+		bh.consume(unit.fibonacci2(number));
 	}
 
-	public static void main(String[] args) throws RunnerException, IOException {
+	public static void main(String[] args) throws RunnerException {
 		Options opt = new OptionsBuilder()
 				.include(BenchmarkRunner.class.getSimpleName())
 				.forks(1)
